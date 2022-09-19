@@ -16,11 +16,11 @@ public class DateFormatter
     public static string ChangeFormat(string date)
     {
         date = date.Trim();
-        string formatoDemo = $"La cadena ingresada: '{date}' no tiene un formato: 'dd/mm/yyyy'.";
+        string wrongFormat = $"La cadena ingresada: '{date}' no tiene un formato: 'dd/mm/yyyy'.";
         if (date.Length != 10)
         {
-            Console.WriteLine(formatoDemo);
-            return formatoDemo;
+            Console.WriteLine(wrongFormat);
+            return wrongFormat;
         }
         try
         {
@@ -30,13 +30,13 @@ public class DateFormatter
             bool validData = DateAnalyse.ValidDate(days, month, year);
             if (validData == true)
                 return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
-            Console.WriteLine(formatoDemo);
-            return formatoDemo;
+            Console.WriteLine(wrongFormat);
+            return wrongFormat;
         }
         catch (FormatException)
         {
-            Console.WriteLine(formatoDemo);
-            return formatoDemo;
+            Console.WriteLine(wrongFormat);
+            return wrongFormat;
         } 
     }
 }
