@@ -30,10 +30,12 @@ public class DateFormatter
             bool validData = DateAnalyse.ValidDate(days, month, year);
             if (validData == true)
                 return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+            Console.WriteLine(formatoDemo);
             return formatoDemo;
         }
         catch (FormatException)
         {
+            Console.WriteLine(formatoDemo);
             return formatoDemo;
         } 
     }
